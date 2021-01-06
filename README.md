@@ -145,4 +145,4 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance. 
 
-   
+https://github.com/TeamWarkatz/KU-Cybersecurity-Bootcamp/issues/4#issuecomment-755040782
