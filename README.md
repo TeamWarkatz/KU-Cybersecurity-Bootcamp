@@ -177,9 +177,9 @@ Playbooks for Filebeat and Mtricbeat are also here: [filebeat](Playbooks/filebea
 $ cd /etc/ansible
 $ mkdir files
 # Clone Repository + IaC Files
-$ git clone https://github.com/
+$ git clone https://github.com/TeamWarkatz/KU-CyberSecurity-Bootcamp
 # Move Playbooks and hosts file Into `/etc/ansible`
-$ cp /Project-1-ELK-Stack-Project/ReadMe/Playbooks/*
+$ cp /KU-CyberSecurity-Bootcamp/ReadMe/Playbooks/*
 ```
 - Update the hosts file to include webserver and elk
 - Edit hosts file to update and to make Ansible run the playbook on a specific machine, and specify which machine to install the ELK server on versus which to install Filebeat.
@@ -191,7 +191,7 @@ $ cat > hosts <<EOF
 10.0.0.7
 10.0.0.8
 
-[elk]
+[MatrixVM]
 10.1.0.4
 EOF
 ```
