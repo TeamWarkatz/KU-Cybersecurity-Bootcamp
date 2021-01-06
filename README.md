@@ -94,4 +94,24 @@ collect metrics from the operating system and from services running on the serve
 
 The configuration details of each machine may be found below.
 
+ Name      | Function  | IP Address | Operating System |
+|-----------|-----------|------------|------------------|
+| Jump Box | Gateway   | 10.0.0.4   | Linux            |
+| Web1     | Webserver | 10.0.0.5   | Linux            |
+| Web2     | Webserver | 10.0.0.6   | Linux            |
+| MatrixVM | Monitoring| 10.1.0.4   | Linux            |
+ 
+
+### Access Policies
+
+The machines on the internal network are not exposed to the public Internet. 
+
+Only the jump box provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 5061 Kibana Port
+
+Machines within the network can only be accessed by jump box provisioner.
+
+Which machine did you allow to access your ELK VM? 
+- My IP Address:
+
    
