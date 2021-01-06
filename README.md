@@ -147,3 +147,61 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ![image](https://user-images.githubusercontent.com/70439871/103723090-e45e3500-4f96-11eb-8a8d-1b9e900765a7.png)
 
+
+### Target Machines & Beats
+This ELK server is configured to monitor the following machines:
+-Private IPs of Web-1 and Web-2
+
+| Name      | IP Addresses         |
+|---------- |----------------------|
+| Web1     | 10.0.0.5             |
+| Web2     | 10.0.0.6             |
+                  
+
+We have installed the following Beats on these machines:
+- Microbeats
+
+These Beats allow us to collect the following information from each machine:
+- Filebeat - collects data about the file system
+- Metricbeat - collects machine metrics, such as uptime
+
+### Using the Playbook
+In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+
+SSH into the control node and follow the steps below:
+
+Copy the playbook file to Ansible Control Node.
+Playbooks for Filebeat and Mtricbeat are also here: [filebeat](Playbooks/filebeat-playbook.yml) and [microbeat](Playbooks/microbeat-playbook.yml)
+ 
+```
+$ cd /etc/ansible
+$ mkdir files
+# Clone Repository + IaC Files
+$ git clone https://github.com/
+# Move Playbooks and hosts file Into `/etc/ansible`
+$ cp /Project-1-ELK-Stack-Project/ReadMe/Playbooks/*
+```
+- Update the hosts file to include webserver and elk
+- Edit hosts file to update and to make Ansible run the playbook on a specific machine, and specify which machine to install the ELK server on versus which to install Filebeat.
+- Copy of the hosts file is also here: hosts
+```
+$ cd /etc/ansible
+$ cat > hosts <<EOF
+[webservers]
+10.0.0.7
+10.0.0.8
+
+[elk]
+10.1.0.4
+EOF
+```
+- Run the playbook, and navigate to Kibana (http://[Host IP]/app/kibana#/home) to check that the installation worked as expected.
+```
+cd /etc/ansible
+ $ ansible-playbook install_elk.yml elk
+ $ ansible-playbook install_filebeat.yml webservers
+ $ ansible-playbook install_metricbeat.yml webservers
+ ```
+ - Check that the ELK server is running: http://[Host IP]/app/kibana#/home 
+
+
