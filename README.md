@@ -114,4 +114,15 @@ Machines within the network can only be accessed by jump box provisioner.
 Which machine did you allow to access your ELK VM? 
 - My IP Address:
 
+A summary of the access policies in place can be found in the table below.
+
+| Name      | Publicly Accessible | Allowed IP Addresses |
+|---------- |---------------------|----------------------|
+| Jump Box  | Yes                 |                      |
+| Web1      | No                  | 10.1.0.4             |
+| Web2      | No                  | 10.1.0.4             |
+| MatrixVM  | No                  | 10.1.0.4             |
+
+
+
    
